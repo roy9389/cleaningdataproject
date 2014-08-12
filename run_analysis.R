@@ -28,6 +28,6 @@ mergeData <- merge(bindData, activityLabels, by = "activity")
 ## now create a second dataset
 summaryData <- aggregate(mergeData[,2:80], by = list(Activity = mergeData$activityNames, Subject = mergeData$identity), FUN = mean)
 ## export the data to text files
-write.table(mergeData, "mergeData.txt")
-write.table(summaryData, "summaryData.txt")
+write.table(mergeData, "mergeData.txt", row.names = FALSE)
+write.table(summaryData, "summaryData.txt", row.names = FALSE)
 
